@@ -1,11 +1,11 @@
 import {readFile} from 'node:fs/promises';
 
-async function solve() {
-	const input = await readFile(new URL('input.txt', import.meta.url), {
-		encoding: 'utf8',
-	});
+const input = await readFile(new URL('input.txt', import.meta.url), {
+	encoding: 'utf8',
+});
 
-	return input
+console.log(
+	input
 		.split('\n\n')
 		.map((group) =>
 			group
@@ -15,7 +15,5 @@ async function solve() {
 		)
 		.sort((a, b) => b - a)
 		.slice(0, 3)
-		.reduce((sum, calories) => sum + calories);
-}
-
-console.log(await solve());
+		.reduce((sum, calories) => sum + calories),
+);

@@ -54,17 +54,15 @@ function getRoundPoints([opponent, end]) {
 	return points;
 }
 
-async function solve() {
-	const input = await readFile(new URL('input.txt', import.meta.url), {
-		encoding: 'utf8',
-	});
+const input = await readFile(new URL('input.txt', import.meta.url), {
+	encoding: 'utf8',
+});
 
-	return input
+console.log(
+	input
 		.split('\n')
 		.map((round) =>
 			getRoundPoints(round.split(' ').map((choice) => decryptChoice(choice))),
 		)
-		.reduce((sum, roundScore) => sum + roundScore);
-}
-
-console.log(await solve());
+		.reduce((sum, roundScore) => sum + roundScore),
+);
