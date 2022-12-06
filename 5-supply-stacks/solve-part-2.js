@@ -28,9 +28,10 @@ const instructions = input
 	});
 
 for (const {crateCount, fromStack, toStack} of instructions) {
-	stacks[toStack] = stacks[toStack].concat(
-		stacks[fromStack].splice(-crateCount, crateCount),
-	);
+	stacks[toStack] = [
+		...stacks[toStack],
+		...stacks[fromStack].splice(-crateCount, crateCount),
+	];
 }
 
 console.log(stacks.map((stack) => stack[stack.length - 1]).join(''));
