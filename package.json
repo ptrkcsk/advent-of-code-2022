@@ -7,7 +7,8 @@
     "solve:1-calorie-counting:part-1": "node 1-calorie-counting/solve-part-1.js",
     "solve:1-calorie-counting:part-2": "node 1-calorie-counting/solve-part-2.js",
     "solve:2-rock-paper-scissors:part-1": "node 2-rock-paper-scissors/solve-part-1.js",
-    "solve:2-rock-paper-scissors:part-2": "node 2-rock-paper-scissors/solve-part-2.js"
+    "solve:2-rock-paper-scissors:part-2": "node 2-rock-paper-scissors/solve-part-2.js",
+    "solve:3-rucksack-reorganization:part-1": "node 3-rucksack-reorganization/solve-part-1.js"
   },
   "devDependencies": {
     "xo": "^0.53.1"
