@@ -1,0 +1,17 @@
+{
+  "name": "@ptrkcsk/advent-of-code-2022",
+  "license": "UNLICENSED",
+  "author": "Patrik Csak <p@trikcsak.com>",
+  "scripts": {
+    "format": "xo --fix",
+    "solve:1-calorie-counting": "node 1-calorie-counting/solve.js"
+  },
+  "devDependencies": {
+    "xo": "^0.53.1"
+  },
+  "engines": {
+    "node": ">=18 <=19"
+  },
+  "private": true,
+  "type": "module"
+}
