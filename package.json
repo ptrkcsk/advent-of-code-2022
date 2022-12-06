@@ -5,7 +5,8 @@
   "scripts": {
     "format": "xo --fix",
     "solve:1-calorie-counting:first-half": "node 1-calorie-counting/solve-first-half.js",
-    "solve:1-calorie-counting:second-half": "node 1-calorie-counting/solve-second-half.js"
+    "solve:1-calorie-counting:second-half": "node 1-calorie-counting/solve-second-half.js",
+    "solve:2-rock-paper-scissors": "node 2-rock-paper-scissors/solve.js"
   },
   "devDependencies": {
     "xo": "^0.53.1"
