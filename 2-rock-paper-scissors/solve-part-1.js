@@ -42,7 +42,7 @@ async function solve() {
 		.map((round) =>
 			getRoundPoints(round.split(' ').map((choice) => decryptChoice(choice))),
 		)
-		.reduce((sum, roundScore) => sum + roundScore)
+		.reduce((sum, roundScore) => sum + roundScore);
 }
 
 console.log(await solve());
