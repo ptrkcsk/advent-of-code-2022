@@ -1,0 +1,56 @@
+import {readFile} from 'node:fs/promises';
+
+const input = await readFile(new URL('input.txt', import.meta.url), {
+	encoding: 'utf8',
+});
+
+let listing = false;
+let location = '';
+
+const sizes = {};
+
+function incrementSize({location, amount}) {
+	if (!(location in sizes)) sizes[location] = 0;
+
+	sizes[location] += amount;
+
+	const levels = location.split('/');
+
+	if (levels.length > 1) {
+		const parent = levels.slice(0, -1).join('/');
+
+		incrementSize({location: parent, amount});
+	}
+}
+
+for (const line of input.split('\n')) {
+	if (line.startsWith('$')) {
+		listing = false;
+	}
+
+	if (listing) {
+		if (/^\d+/.test(line)) {
+			const [size] = line.split(' ');
+
+			incrementSize({amount: Number(size), location});
+		}
+	} else if (line.startsWith('$ cd')) {
+		const directory = line.slice(5);
+
+		if (directory === '..') {
+			location = location.slice(0, location.lastIndexOf('/'));
+		} else if (directory === '/') {
+			location = 'root';
+		} else {
+			location += `/${directory}`;
+		}
+	} else if (line.startsWith('$ ls')) {
+		listing = true;
+	}
+}
+
+console.log(
+	Object.values(sizes)
+		.filter((size) => size <= 100_000)
+		.reduce((sum, size) => sum + size),
+);
