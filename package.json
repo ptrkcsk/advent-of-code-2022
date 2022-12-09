@@ -16,7 +16,8 @@
     "solve:5-supply-stacks:part-2": "node 5-supply-stacks/solve-part-2.js",
     "solve:6-tuning-trouble:part-1": "node 6-tuning-trouble/solve-part-1.js",
     "solve:6-tuning-trouble:part-2": "node 6-tuning-trouble/solve-part-2.js",
-    "solve:7-no-space-left-on-device": "node 7-no-space-left-on-device/solve-part-1.js"
+    "solve:7-no-space-left-on-device:part-1": "node 7-no-space-left-on-device/solve-part-1.js",
+    "solve:7-no-space-left-on-device:part-2": "node 7-no-space-left-on-device/solve-part-2.js"
   },
   "devDependencies": {
     "xo": "^0.53.1"
